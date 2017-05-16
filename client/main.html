@@ -1,0 +1,28 @@
+<head>
+  <title>publish-problem</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <h2>Featured</h2>
+  {{#each featured_posts}}
+    {{> post}}
+  {{/each}}
+  <h2>Posts</h2>
+  {{#each posts}}
+    {{> post}}
+  {{/each}}
+  <a href="{{pathFor 'Posts.list' page='0' }}">page 1</a>
+  <a href="{{pathFor 'Posts.list' page='1' }}">page 2</a>
+  <a href="{{pathFor 'Posts.list' page='2' }}">page 3</a>
+</template>
+
+
+<template name="post">
+  <p>{{name}}</p>
+</template>
